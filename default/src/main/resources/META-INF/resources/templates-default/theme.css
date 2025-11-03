@@ -1,0 +1,319 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+/* color scheme and some layout elements from https://html5up.net */
+
+html {
+	font-size:		large;
+}
+
+body {
+
+	--color-accent:			#f56a6a;
+
+	font-family: "Roboto Slab", serif;
+
+	& > .fixed {
+		width:		1rem;
+		height:		1rem;
+		border:		1px solid red;
+		position:	fixed;
+		top:		0px;
+		left:		0px;
+	}
+
+	& > header {
+		& > h1 {
+			display:	none;
+		}
+
+		& > label {
+			grid-area:		hamburger;
+			color:			var(--color-accent);
+			font-size:		2rem;
+			font-weight:	bold;
+		}
+
+		& > search {
+			background-color: #eff1f2;
+			form {
+				display:	flex;
+				gap:		1rem;
+			}
+
+			input[type="submit"], input[type="text"] {
+				border-radius:		0.375em;
+				border:				solid 1px rgba(210, 215, 217, 0.75);
+				height:				1.7rem;
+				padding-left:		0.5rem;
+				font-size:			1rem;
+			}
+
+			input[type="submit"] {
+				font-size:			2rem;
+				line-height:		0.60rem;
+				border-radius:		0.2em;
+			}
+
+			input[type="submit"]:hover {
+				border-color:	var(--color-accent);
+			}
+		}
+
+		& > nav {
+			background-color:	#f5f6f7;
+
+			a, a:visited {
+				text-decoration:	none;
+				color:				#3d4449;
+				display:			block;
+				border:				0px solid red;
+				padding-top:		0.5rem;
+				padding-bottom:		0.5rem;
+			}
+
+			& > h2 {
+				border-bottom:	0.15rem solid var(--color-accent);
+				padding-bottom:	0.2rem;
+				display:	inline-block;
+				font-size:		1rem;
+				margin-bottom:	1rem;
+				font-weight:	700;
+			}
+			& > ul {
+				margin:		0px;
+				padding:	0px;
+				font-size:	1rem;
+				& > li {
+					list-style:		none;
+					margin:			0px;
+					border-top:		solid 1px rgba(210, 215, 217, 0.75);
+					text-transform:	uppercase;
+					position:		relative;
+
+					& > ul {
+						padding:	0px;
+						padding-left:	0.3rem;
+						margin:		0px;
+						height:		0px;
+						visibility:	hidden;
+						opacity:	0;
+						li {
+							list-style:	none;
+							padding-top: 0.5rem;
+							padding-bottom: 0.5rem;
+						}
+					}
+				}
+				& > li:has(ul):after {
+					content: "^"; 
+					content: "\25B2";
+					text-align:	right;
+					position:	absolute;
+					right:		0.2rem;
+					top:		0.2rem;
+					transition: transform 1s 0s, color 1s 0s;
+				}
+
+				& > li > a:has(+ a),
+				& > li > a:target {
+					width:		0rem;
+					height:		0rem;
+					border:		1px solid red;
+					position:	fixed;
+					top:		0px;
+					left:		0px;
+					display:	none;
+				}
+
+				& > li:focus-within > ul,
+				& > li:target > ul,
+				& > li > a:target + a + ul {
+					visibility:		visible;
+					opacity:		1;
+					height:			auto;
+				}
+				& > li:focus-within:has(ul):after,
+				& > li:target:has(ul):after,
+				& > li:has(a:target):has(ul):after {
+					transform:	rotate(180deg);
+					color:		var(--color-accent);
+				}
+
+				& > li:first-child {
+					border-top:	0px solid red;
+				}
+			}
+		}
+	}
+
+	& > main {
+		& > section:nth-of-type(1),
+		& > form > section:nth-of-type(1) {
+			h2 {
+				padding-top:	0px;
+				margin-top:		0px;
+			}
+		}
+	}
+
+	& > main, & > footer {
+
+
+		h2 {
+			border-bottom:	0.20rem solid var(--color-accent);
+			font-size:		2rem;
+			font-weight:	normal;
+			transition:		color 1s 0s;
+			margin-bottom:	0.5rem;
+		}
+
+		h2:hover {
+			color:	var(--color-accent);
+		}
+
+		h3 {
+			font-size:		2rem;
+			font-weight:	bold;
+			text-transform:	uppercase;
+			padding-top:	0px;
+			margin-top:		0px;
+			margin-bottom:	0.5rem;
+		}
+
+		h4 {
+			font-size:		1rem;
+			font-weight:	normal;
+			text-transform:	uppercase;
+			margin-top:		0px;
+			margin-bottom:	0.5rem;
+		}
+
+		p {
+			font-size:		1rem;
+			font-weight:	300;
+		}
+
+		& > section, & > form > section {
+			display:	grid;
+			grid-template-columns: auto fit-content(100px);
+			grid-template-rows: auto;
+
+			& figure > figcaption {
+				font-size:	1rem;
+			}
+
+			h2, h3, h4 {
+				grid-column: 1 / -1;
+			}
+
+		}
+
+		fieldset > legend {
+			font-weight:	300;
+		}
+
+		fieldset {
+			border-width:	1px;
+			border-style:	solid;
+			border-color:	gray;
+			grid-column:	1 / -1;
+			gap:			0.5rem;
+			align-items:	center;
+
+			display:		grid;
+			grid-template-columns:	auto auto;
+			padding:		1rem;
+
+			label {
+				font-weight:	300;
+				font-size:		1rem;
+			}
+
+			& > div {
+				grid-column:	1 / -1;
+				display:	flex;
+				gap:		1rem;
+			}
+
+			& > div.ui-widget {
+				grid-column:	auto;
+				display:	block;
+			}
+		}
+
+	}
+
+}
+
+@media (width <= 800px) {
+	body {
+
+		& > main, & > footer {
+
+			& > section, & > form > section {
+				display:	flex;
+				flex-direction:	column;
+			}
+		}
+	}
+}
+
+
+/* primefaces */
+
+body {
+	main {
+		.ui-button, input[type="text"], input[type="button"], input[type="submit"],
+		.ui-chkbox .ui-chkbox-box.ui-state-active,
+		a, a:visited {
+			background:		white;
+			border-radius:	0.375em;
+			font-size:		1rem;
+			font-weight:	bold;
+			padding:		0.5rem;
+			padding-left:	1rem;
+			padding-right:	1rem;
+			line-height:	normal;
+			border:			solid 1px rgba(210, 215, 217, 0.75);
+		}
+
+		.ui-button, input[type="button"], input[type="submit"],
+		.ui-chkbox .ui-chkbox-box.ui-state-active,
+		a, a:visited {
+			box-shadow:		inset 0 0 0 2px #f56a6a;
+			border:			0px solid red;
+		}
+
+		.ui-chkbox .ui-chkbox-box.ui-state-active,
+		a, a:visited {
+			color:	var(--color-accent);
+		}
+
+		.ui-chkbox .ui-chkbox-box.ui-state-hover,
+		.ui-chkbox .ui-chkbox-box.ui-state-focus,
+		.ui-chkbox .ui-chkbox-box.ui-state-active.ui-state-hover,
+		.ui-chkbox .ui-chkbox-box.ui-state-active.ui-state-focus {
+			background-color:	rgba(245, 106, 106, 0.05);
+			border-color:		var(--color-accent);
+			box-shadow:			none;
+		}
+
+		.ui-button.ui-button-text-only .ui-button-text {
+			padding:		0px;
+		}
+
+		.ui-button, input[type="button"], input[type="submit"], a, a:visited {
+			color:				#f56a6a;
+			text-transform:		uppercase;
+			text-decoration:	none;
+		}
+
+		.ui-button.ui-state-hover {
+			background-color: rgba(245, 106, 106, 0.05);
+			color:			#f56a6a;
+			border:			0px solid red;
+		}
+	}
+}
+

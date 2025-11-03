@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+>
+	<!-- copyright (c) 2025 Anton Yudin -->
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.antonyudin.templates.jsf</groupId>
+	<version>1.0</version>
+	<artifactId>project</artifactId>
+	<packaging>pom</packaging>
+
+	<name>JSF Templates</name>
+	<description>JSF Templates</description>
+	<url>https://github.com/AntonYudin/templates-jsf</url>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Anton Yudin</name>
+			<email>dev@antonyudin.com</email>
+		</developer>
+	</developers>
+
+	<modules>
+		<module>default</module>
+		<module>example</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.war.plugin.version>3.4.0</maven.war.plugin.version>
+		<jupiter.version>5.13.0-M2</jupiter.version>
+		<maven.surefire.version>3.5.3</maven.surefire.version>
+		<maven.jar.version>3.4.2</maven.jar.version>
+		<maven.compiler.version>3.14.0</maven.compiler.version>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+		<jakarta.version>10.0.0</jakarta.version>
+		<glassfish.jakarta.faces.version>4.0.11</glassfish.jakarta.faces.version>
+		<primefaces.version>14.0.2</primefaces.version>
+		<template>default</template>
+	</properties>
+
+	<build>
+
+		<pluginManagement>
+
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven.compiler.version}</version>
+					<configuration>
+
+						<source>${maven.compiler.source}</source>
+						<target>${maven.compiler.target}</target>
+					</configuration>
+				</plugin>
+			</plugins>
+
+		</pluginManagement>
+
+	</build>
+
+	<dependencyManagement>
+
+		<dependencies>
+
+			<dependency>
+				<groupId>jakarta.platform</groupId>
+				<artifactId>jakarta.jakartaee-api</artifactId>
+				<version>${jakarta.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-api</artifactId>
+				<version>${jupiter.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.glassfish</groupId>
+				<artifactId>jakarta.faces</artifactId>
+				<version>${glassfish.jakarta.faces.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.primefaces</groupId>
+				<artifactId>primefaces</artifactId>
+				<version>${primefaces.version}</version>
+				<classifier>jakarta</classifier>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+</project>
+

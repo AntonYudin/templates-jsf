@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html
+   lang="en"
+   xmlns:f="jakarta.faces.core"
+   xmlns:h="jakarta.faces.html"
+   xmlns:ui="jakarta.faces.facelets"
+>
+
+	<h:head>
+		<title><ui:insert name="pageTitle"/></title>
+		<ui:insert name="metadata"/>
+		<h:outputStylesheet name="css/main.css"/>
+	</h:head>
+
+	<h:body>
+		<f:view>
+			<ui:insert name="content"/>
+		</f:view>
+	</h:body>
+
+</html>
+

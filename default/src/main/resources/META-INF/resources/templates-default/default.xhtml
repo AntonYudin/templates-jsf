@@ -1,0 +1,25 @@
+<ui:composition
+	xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:jsf="jakarta.faces"
+	xmlns:passthrough="jakarta.faces.passthrough"
+	template="root.xhtml"
+>
+	<ui:param name="title" value="Default Page"/>
+
+	<ui:define name="styles">
+		<h:outputStylesheet name="layout-menu-left.css" library="templates-default"/>
+		<h:outputStylesheet name="theme.css" library="templates-default" rendered="true"/>
+	</ui:define>
+
+	<ui:define name="main-menu-header">
+		<h2>Menu</h2>
+	</ui:define>
+
+	<ui:define name="main-menu-toggle">
+		&#x2630;
+	</ui:define>
+
+</ui:composition>
+

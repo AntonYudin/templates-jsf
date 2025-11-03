@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html
+	lang="en"
+	xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+>
+
+	<h:head>
+		<title><ui:insert name="title"/></title>
+		<ui:insert name="metadata"/>
+		<ui:insert name="styles"/>
+	</h:head>
+
+	<h:body>
+		<f:view id="main">
+			<ui:insert name="menu-checkbox"/>
+			<header>
+				<ui:insert name="header"/>
+				<label for="menu-checkbox:menu">
+					<ui:insert name="main-menu-toggle"/>
+				</label>
+				<search>
+					<ui:insert name="main-search"/>
+				</search>
+				<nav>
+					<ui:insert name="main-menu-header"/>
+					<ui:insert name="main-menu"/>
+				</nav>
+			</header>
+			<main>
+				<ui:insert name="main-sections"/>
+			</main>
+			<footer>
+				<ui:insert name="footer-sections"/>
+			</footer>
+		</f:view>
+	</h:body>
+
+</html>
+
