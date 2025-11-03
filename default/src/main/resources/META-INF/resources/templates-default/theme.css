@@ -260,12 +260,11 @@ body {
 }
 
 
-/* primefaces */
+/* form controls */
 
 body {
 	main {
-		.ui-button, input[type="text"], input[type="button"], input[type="submit"],
-		.ui-chkbox .ui-chkbox-box.ui-state-active,
+		input[type="text"], input[type="button"], input[type="submit"],
 		a, a:visited {
 			background:		white;
 			border-radius:	0.375em;
@@ -278,42 +277,22 @@ body {
 			border:			solid 1px rgba(210, 215, 217, 0.75);
 		}
 
-		.ui-button, input[type="button"], input[type="submit"],
-		.ui-chkbox .ui-chkbox-box.ui-state-active,
+		input[type="button"], input[type="submit"],
 		a, a:visited {
 			box-shadow:		inset 0 0 0 2px #f56a6a;
 			border:			0px solid red;
 		}
 
-		.ui-chkbox .ui-chkbox-box.ui-state-active,
 		a, a:visited {
 			color:	var(--color-accent);
 		}
 
-		.ui-chkbox .ui-chkbox-box.ui-state-hover,
-		.ui-chkbox .ui-chkbox-box.ui-state-focus,
-		.ui-chkbox .ui-chkbox-box.ui-state-active.ui-state-hover,
-		.ui-chkbox .ui-chkbox-box.ui-state-active.ui-state-focus {
-			background-color:	rgba(245, 106, 106, 0.05);
-			border-color:		var(--color-accent);
-			box-shadow:			none;
-		}
-
-		.ui-button.ui-button-text-only .ui-button-text {
-			padding:		0px;
-		}
-
-		.ui-button, input[type="button"], input[type="submit"], a, a:visited {
+		input[type="button"], input[type="submit"], a, a:visited {
 			color:				#f56a6a;
 			text-transform:		uppercase;
 			text-decoration:	none;
 		}
 
-		.ui-button.ui-state-hover {
-			background-color: rgba(245, 106, 106, 0.05);
-			color:			#f56a6a;
-			border:			0px solid red;
-		}
 	}
 }
 
