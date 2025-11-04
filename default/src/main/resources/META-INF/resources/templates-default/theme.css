@@ -23,8 +23,11 @@ body {
 	}
 
 	& > header {
+
 		& > h1 {
-			display:	none;
+			display1:	none;
+			background-color:	white;
+			z-index:	1;
 		}
 
 		& > label {
@@ -32,14 +35,11 @@ body {
 			color:			var(--color-accent);
 			font-size:		2rem;
 			font-weight:	bold;
+			margin-top:		-0.3rem;
 		}
 
 		& > search {
 			background-color: #eff1f2;
-			form {
-				display:	flex;
-				gap:		1rem;
-			}
 
 			input[type="submit"], input[type="text"] {
 				border-radius:		0.375em;

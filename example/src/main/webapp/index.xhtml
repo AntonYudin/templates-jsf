@@ -5,72 +5,13 @@
 	xmlns:jsf="jakarta.faces"
 	xmlns:passthrough="jakarta.faces.passthrough"
 	xmlns:p="http://primefaces.org/ui"
-	template="/templates-default/default.xhtml"
+	template="/WEB-INF/layout/default.xhtml"
 >
-	<ui:param name="title" value="JSF Template Page 1"/>
 	<ui:param name="layoutEnabled" value="true"/>
 	<ui:param name="themeEnabled" value="true"/>
 
-	<ui:define name="header1">
-		<h1>Header</h1>
-	</ui:define>
-
-	<ui:define name="main-search">
-		<h:form>
-			<h:inputText passthrough:placeholder="Search" value="#{search.query}"/>
-			<h:commandButton action="#{search.search}" value="&#x2315;"/>
-		</h:form>
-	</ui:define>
-
-	<ui:define name="menu-checkbox">
-		<h:form id="menu-checkbox" rendered="true">
-			<h:selectBooleanCheckbox id="menu" value="#{menu.open}">
-				<f:ajax render="@this" execute="@this"/>
-			</h:selectBooleanCheckbox>
-		</h:form>
-		<form jsf:rendered="false">
-			<input id="menu-checkbox:menu" type="checkbox"/>
-		</form>
-	</ui:define>
-
-	<ui:define name="main-menu">
-		<ul>
-			<li><h:outputLink outcome="index">Homepage</h:outputLink></li>
-			<li><h:outputLink>Canaries</h:outputLink></li>
-			<li><h:outputLink>Habitat</h:outputLink></li>
-			<li>
-				<a id="1"/>
-				<h:outputLink value="#1">Submenu</h:outputLink>
-				<ul>
-					<li>Menu A</li>
-					<li>Menu B</li>
-					<li>Menu C</li>
-					<li>Menu D</li>
-				</ul>
-			</li>
-			<li>
-				<a id="2"/>
-				<h:outputLink value="#2">Another Submenu</h:outputLink>
-				<ul>
-					<li>Menu A</li>
-					<li>Menu B</li>
-					<li>Menu C</li>
-					<li>Menu D</li>
-				</ul>
-			</li>
-			<li><h:outputLink>Menu 4</h:outputLink></li>
-		</ul>
-	</ui:define>
-
-	<ui:define name="footer-sections">
-		<section>
-			<h2>Footer Section 1</h2>
-			<p>Footer Section 1 content</p>
-		</section>
-		<section>
-			<h2>Footer Section 2</h2>
-			<p>Footer Section 2 content</p>
-		</section>
+	<ui:define name="pageTitle">
+		Page 1
 	</ui:define>
 
 	<ui:define name="main-sections">
@@ -87,7 +28,7 @@
 			<section>
 				<h2>Section 1 title</h2>
 				<h3>Part 1 Of Section 1</h3>
-				<h4>A free and fully responsive site template</h4>
+				<h4>Originating from the Canary Islands</h4>
 				<p>Canaries are small, vibrant songbirds that belong to the finch family, originating from the Canary Islands, Madeira, and the Azores. They are known for their bright plumage, which can come in shades of yellow, orange, green, or even red, depending on the breed and diet. In the wild, they are often found in subtropical environments, thriving in areas with abundant food and shelter. Canaries are primarily seed-eaters, although they will also consume some fruits and insects in their natural habitat. They are particularly famous for their beautiful, melodious songs, which vary among individuals and species. In fact, male canaries are more likely to sing than females, using their songs to attract mates and establish territory.</p>
 				<figure>
 					<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Pinz%C3%B3n_azul_de_Gran_Canaria_%28macho%29%2C_M._A._Pe%C3%B1a.jpg"
@@ -119,7 +60,7 @@
 			<section>
 				<h2>Section 1 title</h2>
 				<h3>Part 1 Of Section 1</h3>
-				<h4>A free and fully responsive site template</h4>
+				<h4>Appreciated for their vibrant colors and sweet songs</h4>
 				<p>As domesticated pets, canaries have become one of the most popular bird species worldwide, appreciated for their vibrant colors and sweet songs. They are relatively easy to care for, requiring a spacious cage, access to fresh food and water, and regular social interaction. Canaries are known to be quite social, though they can be somewhat shy when first introduced to new environments. Their cheerful singing and gentle nature make them ideal companions for people who live in apartments or smaller spaces. These birds are generally hardy, but they require proper care to stay healthy, especially when it comes to diet, as they need a balanced mix of seeds, fruits, and vegetables. It's important to keep their cages clean and provide them with opportunities for exercise, like perches and toys.</p>
 				<figure>
 					<img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Restless_flycatcher04.jpg"
@@ -132,6 +73,7 @@
 			</section>
 
 		</h:form>
+
 	</ui:define>
 
 </ui:composition>

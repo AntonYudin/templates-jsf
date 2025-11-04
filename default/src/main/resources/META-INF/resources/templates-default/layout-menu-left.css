@@ -15,7 +15,7 @@ body {
 	display:	grid;
 	gap:		0rem;
 	grid-template-columns:	fit-content(30vw) fit-content(2rem) 1fr;
-	grid-template-rows:		auto;
+	grid-template-rows:		auto 3rem auto;
 	grid-template-areas:
 		"header header header"
 		"search hamburger ."
@@ -49,11 +49,23 @@ body {
 		display:	contents;
 
 
+		& > search,
+		& > label {
+			align-self:		stretch;
+			display:		flex;
+			align-items:	center;
+			& > form {
+				display:		flex;
+				gap:			1rem;
+				align-items:	center;
+			}
+		}
+
 		& > label {
 			grid-area:		hamburger;
 			padding-left:	var(--section-padding);
 			padding-right:	var(--section-padding);
-			padding-top:	var(--section-padding);
+			padding-top1:	var(--section-padding);
 		}
 
 
@@ -66,8 +78,7 @@ body {
 			padding-left:	var(--section-padding);
 			padding-right:	var(--section-padding);
 			position:		sticky;
-			top:			1px;
-			border:			1px solid red;
+			top:			0px;
 			grid-area:		header;
 		}
 
@@ -81,10 +92,10 @@ body {
 		}
 
 		& > search {
-			padding-left:	var(--section-padding);
-			padding-top:	var(--section-padding);
-			padding-right:	var(--section-padding);
-			padding-bottom:	var(--section-padding);
+			padding-left:		var(--section-padding);
+			padding1-top:		var(--section-padding);
+			padding-right:		var(--section-padding);
+			padding1-bottom:	var(--section-padding);
 			top:			0px;
 			grid-area:		search;
 		}

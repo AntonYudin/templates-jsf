@@ -1,22 +1,77 @@
-<!DOCTYPE html>
-<html
-   lang="en"
-   xmlns:f="jakarta.faces.core"
-   xmlns:h="jakarta.faces.html"
-   xmlns:ui="jakarta.faces.facelets"
+<ui:composition
+	xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:jsf="jakarta.faces"
+	xmlns:passthrough="jakarta.faces.passthrough"
+	templateoff="/resources/templates-default/default.xhtml"
+	template="/templates-default/default.xhtml"
 >
+	<ui:define name="title">
+		Site Name / <ui:insert name="pageTitle"/>
+	</ui:define>
 
-	<h:head>
-		<title><ui:insert name="pageTitle"/></title>
-		<ui:insert name="metadata"/>
-		<h:outputStylesheet name="css/main.css"/>
-	</h:head>
+	<ui:define name="header-off">
+		<h1>Header, Site Name / <ui:insert name="pageTitle"/></h1>
+	</ui:define>
 
-	<h:body>
-		<f:view>
-			<ui:insert name="content"/>
-		</f:view>
-	</h:body>
+	<ui:define name="main-search">
+		<h:form>
+			<h:inputText passthrough:placeholder="Search" value="#{search.query}"/>
+			<h:commandButton action="#{search.search}" value="&#x2315;"/>
+		</h:form>
+	</ui:define>
 
-</html>
+	<ui:define name="menu-checkbox">
+		<h:form id="menu-checkbox" rendered="true">
+			<h:selectBooleanCheckbox id="menu" value="#{menu.open}">
+				<f:ajax render="@this" execute="@this"/>
+			</h:selectBooleanCheckbox>
+		</h:form>
+		<form jsf:rendered="false">
+			<input id="menu-checkbox:menu" type="checkbox"/>
+		</form>
+	</ui:define>
+
+	<ui:define name="main-menu">
+		<ul>
+			<li><h:outputLink outcome="index">Homepage</h:outputLink></li>
+			<li><h:outputLink>Canaries</h:outputLink></li>
+			<li><h:outputLink>Habitat</h:outputLink></li>
+			<li>
+				<a id="1"/>
+				<h:outputLink value="#1">Submenu</h:outputLink>
+				<ul>
+					<li>Menu A</li>
+					<li>Menu B</li>
+					<li>Menu C</li>
+					<li>Menu D</li>
+				</ul>
+			</li>
+			<li>
+				<a id="2"/>
+				<h:outputLink value="#2">Another Submenu</h:outputLink>
+				<ul>
+					<li>Menu A</li>
+					<li>Menu B</li>
+					<li>Menu C</li>
+					<li>Menu D</li>
+				</ul>
+			</li>
+			<li><h:outputLink>Menu 4</h:outputLink></li>
+		</ul>
+	</ui:define>
+
+	<ui:define name="footer-sections">
+		<section>
+			<h2>Footer Section 1</h2>
+			<p>Footer Section 1 content</p>
+		</section>
+		<section>
+			<h2>Footer Section 2</h2>
+			<p>Footer Section 2 content</p>
+		</section>
+	</ui:define>
+
+</ui:composition>
 
