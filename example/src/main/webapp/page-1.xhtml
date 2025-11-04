@@ -1,0 +1,48 @@
+<ui:composition
+	xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:jsf="jakarta.faces"
+	xmlns:passthrough="jakarta.faces.passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/layout/default.xhtml"
+>
+	<ui:param name="layoutEnabled" value="true"/>
+	<ui:param name="themeEnabled" value="true"/>
+
+	<ui:define name="pageTitle">
+		Page 1
+	</ui:define>
+
+	<ui:define name="main-sections">
+		<h:form>
+			<h:messages/>
+			<section jsf:rendered="#{not empty search.results}">
+				<h2>Search results for #{search.query}</h2>
+				<ul>
+					<ui:repeat value="#{search.results}" var="result">
+						<li>#{result}</li>
+					</ui:repeat>
+				</ul>
+			</section>
+			<section>
+				<h2>Section 1 title</h2>
+				<h3>Part 1 Of Section 1</h3>
+				<h4>Appreciated for their vibrant colors and sweet songs</h4>
+				<p>As domesticated pets, canaries have become one of the most popular bird species worldwide, appreciated for their vibrant colors and sweet songs. They are relatively easy to care for, requiring a spacious cage, access to fresh food and water, and regular social interaction. Canaries are known to be quite social, though they can be somewhat shy when first introduced to new environments. Their cheerful singing and gentle nature make them ideal companions for people who live in apartments or smaller spaces. These birds are generally hardy, but they require proper care to stay healthy, especially when it comes to diet, as they need a balanced mix of seeds, fruits, and vegetables. It's important to keep their cages clean and provide them with opportunities for exercise, like perches and toys.</p>
+				<figure>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Restless_flycatcher04.jpg"
+						 alt="Conceptual interior of a space habitat (O’Neill cylinder)" />
+					<figcaption>A concept view of an O’Neill cylinder habitat (Wikimedia Commons)</figcaption>
+				</figure>
+				<p>
+					<a href="#">Learn More</a>
+				</p>
+			</section>
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+
