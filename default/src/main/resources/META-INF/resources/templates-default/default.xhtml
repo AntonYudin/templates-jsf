@@ -9,12 +9,12 @@
 	<ui:param name="title" value="Default Page"/>
 
 	<ui:define name="styles">
-		<h:outputStylesheet name="layout-menu-left.css" library="templates-default"/>
-		<h:outputStylesheet name="theme.css" library="templates-default" rendered="true"/>
+		<h:outputStylesheet name="layout-menu-left.css" library="templates-default" rendered="#{layoutEnabled != null? layoutEnabled: 'true'}"/>
+		<h:outputStylesheet name="theme.css" library="templates-default" rendered="#{themeEnabled != null? themeEnabled: 'true'}"/>
 	</ui:define>
 
 	<ui:define name="main-menu-header">
-		<h2>Menu</h2>
+		<h2>Menu, #{themeEnabled}, #{layoutEnabled}</h2>
 	</ui:define>
 
 	<ui:define name="main-menu-toggle">
