@@ -1,0 +1,30 @@
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:jsf="jakarta.faces"
+	xmlns:composite="jakarta.faces.composite"
+	xmlns:passthrough="jakarta.faces.passthrough"
+>
+	<composite:interface>
+
+		<composite:attribute name="available" required="false" default="#{userLocale.available}" />
+		<composite:attribute name="current" required="false" default="#{userLocale.current}" />
+
+	</composite:interface>
+
+	<composite:implementation>
+		<ul jsf:id="#{cc.clientId}">
+			<ui:repeat value="#{cc.attrs.available}" var="item" id="locales">
+				<li area-current="#{cc.attrs.current == item? 'locale': 'false'}">
+					<h:outputLink value="#{userLocale.getSwitchUrl(item)}" id="#{item}">
+						#{item}
+					</h:outputLink>
+				</li>
+			</ui:repeat>
+		</ul>
+	</composite:implementation>
+
+</html>
+

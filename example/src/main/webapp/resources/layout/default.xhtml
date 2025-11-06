@@ -1,0 +1,88 @@
+<ui:composition
+	xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:jsf="jakarta.faces"
+	xmlns:passthrough="jakarta.faces.passthrough"
+	xmlns:userlocale="jakarta.faces.composite/userlocale"
+	templateoff="/resources/templates-default/default.xhtml"
+	template="/templates-default/default.xhtml"
+>
+
+	<ui:define name="styles">
+		<ui:insert name="styles"/>
+		<h:outputStylesheet name="main.css" library="layout"/>
+	</ui:define>
+
+	<ui:define name="locale">
+		<userlocale:selector id="userlocale-selector"/>
+	</ui:define>
+
+	<ui:define name="title">
+		#{messages.site_name} / <ui:insert name="pageTitle"/>
+	</ui:define>
+
+	<ui:define name="header-off">
+		<h1>#{messages.header}, #{messages.site_name} / <ui:insert name="pageTitle"/></h1>
+	</ui:define>
+
+	<ui:define name="main-search">
+		<h:form>
+			<h:inputText passthrough:placeholder="#{messages.search}" value="#{search.query}"/>
+			<h:commandButton action="#{search.search}" value="&#x2315;"/>
+		</h:form>
+	</ui:define>
+
+	<ui:define name="menu-checkbox">
+		<h:form id="menu-checkbox" rendered="true">
+			<h:selectBooleanCheckbox id="menu" value="#{menu.open}">
+				<f:ajax render="@this" execute="@this"/>
+			</h:selectBooleanCheckbox>
+		</h:form>
+		<form jsf:rendered="false">
+			<input id="menu-checkbox:menu" type="checkbox"/>
+		</form>
+	</ui:define>
+
+	<ui:define name="main-menu">
+		<ul>
+			<li><h:link outcome="index">#{messages.menu_homepage}</h:link></li>
+			<li><h:link outcome="page-1">#{messages.menu_canaries}</h:link></li>
+			<li><h:link>#{messages.menu_habitat}</h:link></li>
+			<li>
+				<a id="1"/>
+				<h:outputLink value="#1">#{messages.menu_submenu}</h:outputLink>
+				<ul>
+					<li>#{messages.menu_menu} A</li>
+					<li>#{messages.menu_menu} B</li>
+					<li>#{messages.menu_menu} C</li>
+					<li>#{messages.menu_menu} D</li>
+				</ul>
+			</li>
+			<li>
+				<a id="2"/>
+				<h:outputLink value="#2">#{messages.menu_another_submenu}</h:outputLink>
+				<ul>
+					<li>#{messages.menu_menu} A</li>
+					<li>#{messages.menu_menu} B</li>
+					<li>#{messages.menu_menu} C</li>
+					<li>#{messages.menu_menu} D</li>
+				</ul>
+			</li>
+			<li><h:outputLink>#{messages.menu_menu} 4</h:outputLink></li>
+		</ul>
+	</ui:define>
+
+	<ui:define name="footer-sections">
+		<section>
+			<h2>#{messages.footer_section_1}</h2>
+			<p>#{messages.footer_section_1_content}</p>
+		</section>
+		<section>
+			<h2>#{messages.footer_section_2}</h2>
+			<p>#{messages.footer_section_2_content}</p>
+		</section>
+	</ui:define>
+
+</ui:composition>
+

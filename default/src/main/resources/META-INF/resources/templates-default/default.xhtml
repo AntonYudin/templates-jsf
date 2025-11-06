@@ -10,9 +10,15 @@
 		<ui:insert name="title"/>
 	</ui:define>
 
+	<ui:define name="metadata">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+		<ui:insert name="metadata"/>
+	</ui:define>
+
 	<ui:define name="styles">
 		<h:outputStylesheet name="layout-menu-left.css" library="templates-default" rendered="#{layoutEnabled != null? layoutEnabled: 'true'}"/>
 		<h:outputStylesheet name="theme.css" library="templates-default" rendered="#{themeEnabled != null? themeEnabled: 'true'}"/>
+		<ui:insert name="styles"/>
 	</ui:define>
 
 	<ui:define name="main-menu-header">
@@ -21,6 +27,10 @@
 
 	<ui:define name="main-menu-toggle">
 		&#x2630;
+	</ui:define>
+
+	<ui:define name="locale">
+		<ui:insert name="locale"/>
 	</ui:define>
 
 </ui:composition>

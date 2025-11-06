@@ -10,11 +10,12 @@ import java.util.List;
 import java.util.ArrayList;
 
 import jakarta.faces.application.FacesMessage;
-import jakarta.inject.Named;
-import jakarta.enterprise.context.RequestScoped;
+
 import jakarta.faces.context.FacesContext;
-import jakarta.faces.model.SelectItem;
-import jakarta.inject.Inject;
+
+import jakarta.inject.Named;
+
+import jakarta.enterprise.context.RequestScoped;
 
 
 @RequestScoped
@@ -56,3 +57,4 @@ public class Search implements Serializable {
 	}
 
 }
+

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html
-	lang="en"
+	lang="#{empty userLocale? 'en': userLocale.current}"
 	xmlns:f="jakarta.faces.core"
 	xmlns:h="jakarta.faces.html"
 	xmlns:ui="jakarta.faces.facelets"
@@ -20,6 +20,7 @@
 				<label for="menu-checkbox:menu">
 					<ui:insert name="main-menu-toggle"/>
 				</label>
+				<ui:insert name="locale"/>
 				<search>
 					<ui:insert name="main-search"/>
 				</search>

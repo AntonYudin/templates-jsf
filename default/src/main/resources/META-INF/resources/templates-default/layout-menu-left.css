@@ -18,7 +18,7 @@ body {
 	grid-template-rows:		auto 3rem auto;
 	grid-template-areas:
 		"header header header"
-		"search hamburger ."
+		"search hamburger locale"
 		"menu   content content"
 		"footer footer footer"
 	;
@@ -61,6 +61,18 @@ body {
 			}
 		}
 
+		& > label + ul {
+			grid-area:		locale;
+			display:		flex;
+			list-style:		none;
+			padding:		0px;
+			margin:			0px;
+			gap:			0.5rem;
+			align-items:	center;
+			justify-content:	flex-end;
+			padding-right:	var(--section-padding);
+		}
+	
 		& > label {
 			grid-area:		hamburger;
 			padding-left:	var(--section-padding);
@@ -155,6 +167,7 @@ body {
 		grid-template-columns:	auto;
 		display:		flex;
 		flex-direction:	column;
+
 		& > header, & > form > header {
 			& > h1 {
 				position:		static;
@@ -162,6 +175,11 @@ body {
 
 			& > nav {
 				position:		static;
+			}
+			& > label + ul {
+				position:	absolute;
+				right:		var(--page-padding);
+				top:		0.5rem;
 			}
 		}
 

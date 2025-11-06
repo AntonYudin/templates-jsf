@@ -1,11 +1,13 @@
 
 package com.antonyudin.templates.jsf.first;
 
+
 import java.io.Serializable;
 
 import java.util.logging.Logger;
 
 import jakarta.inject.Named;
+
 import jakarta.enterprise.context.SessionScoped;
 
 

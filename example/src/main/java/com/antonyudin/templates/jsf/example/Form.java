@@ -6,15 +6,13 @@ import java.io.Serializable;
 
 import java.util.logging.Logger;
 
-import java.util.List;
-import java.util.ArrayList;
-
 import jakarta.faces.application.FacesMessage;
+
 import jakarta.inject.Named;
+
 import jakarta.enterprise.context.RequestScoped;
+
 import jakarta.faces.context.FacesContext;
-import jakarta.faces.model.SelectItem;
-import jakarta.inject.Inject;
 
 
 @RequestScoped
@@ -74,7 +72,6 @@ public class Form implements Serializable {
 		logger.info("cancel");
 		addMessage(FacesMessage.SEVERITY_INFO, "Form canceled", null);
 	}
-
 
 }
 

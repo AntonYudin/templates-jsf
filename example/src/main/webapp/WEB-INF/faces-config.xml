@@ -5,4 +5,17 @@
    version="4.0"
 >
 
+	<application>
+		<locale-config>
+			<default-locale>en</default-locale>
+			<supported-locale>en</supported-locale>
+			<supported-locale>es</supported-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>com.antonyudin.templates.jsf.example.messages</base-name>
+			<var>messages</var>
+		</resource-bundle>
+	</application>
+
 </faces-config>
+

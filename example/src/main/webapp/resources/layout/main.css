@@ -1,0 +1,15 @@
+/* test */
+
+html[lang='en'] {
+	& > body > main > form > section:nth-of-type(1) > h2 {
+		color:	blue;
+	}
+}
+
+html[lang='es'] {
+	& > body > main > form > section:nth-of-type(1) > h2 {
+		color:	yellow;
+	}
+}
+
+

@@ -5,38 +5,47 @@
 	xmlns:jsf="jakarta.faces"
 	xmlns:passthrough="jakarta.faces.passthrough"
 	xmlns:p="http://primefaces.org/ui"
-	template="/WEB-INF/layout/default.xhtml"
+	xmlns:userlocale="jakarta.faces.composite/userlocale"
+	template="/resources/layout/default.xhtml"
 >
 	<ui:param name="layoutEnabled" value="true"/>
 	<ui:param name="themeEnabled" value="true"/>
 
 	<ui:define name="pageTitle">
-		Index
+		#{messages.index}
 	</ui:define>
 
 	<ui:define name="main-sections">
 		<h:form>
 			<h:messages/>
 			<section jsf:rendered="#{not empty search.results}">
-				<h2>Search results for #{search.query}</h2>
+				<h2>#{messages.search_results_for} #{search.query}</h2>
 				<ul>
 					<ui:repeat value="#{search.results}" var="result">
 						<li>#{result}</li>
 					</ui:repeat>
 				</ul>
 			</section>
+			<section jsf:id="localization">
+				<h2>#{messages.locales}</h2>
+				<h3>#{messages.manage_website_localization}</h3>
+				<p>
+				</p>
+				<userlocale:selector id="userlocale-selector-example"/>
+			</section>
+	
 			<section>
-				<h2>Section 1 title</h2>
-				<h3>Part 1 Of Section 1</h3>
-				<h4>Originating from the Canary Islands</h4>
-				<p>Canaries are small, vibrant songbirds that belong to the finch family, originating from the Canary Islands, Madeira, and the Azores. They are known for their bright plumage, which can come in shades of yellow, orange, green, or even red, depending on the breed and diet. In the wild, they are often found in subtropical environments, thriving in areas with abundant food and shelter. Canaries are primarily seed-eaters, although they will also consume some fruits and insects in their natural habitat. They are particularly famous for their beautiful, melodious songs, which vary among individuals and species. In fact, male canaries are more likely to sing than females, using their songs to attract mates and establish territory.</p>
+				<h2>#{messages.section_1_title}</h2>
+				<h3>#{messages.part_1_of_section_1}</h3>
+				<h4>#{messages.originating_from_the_canary_islands}</h4>
+				<p>#{messages.section_1_part_1_content}</p>
 				<figure>
 					<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Pinz%C3%B3n_azul_de_Gran_Canaria_%28macho%29%2C_M._A._Pe%C3%B1a.jpg"
 						 alt="Conceptual interior of a space habitat (O’Neill cylinder)" />
 					<figcaption>A concept view of an O’Neill cylinder habitat (Wikimedia Commons)</figcaption>
 				</figure>
 				<p>
-					<a href="#">Learn More</a>
+					<a href="#">#{messages.learn_more}</a>
 				</p>
 			</section>
 			<section>
