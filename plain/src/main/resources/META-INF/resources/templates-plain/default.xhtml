@@ -1,0 +1,37 @@
+<ui:composition
+	xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:jsf="jakarta.faces"
+	xmlns:passthrough="jakarta.faces.passthrough"
+	template="root.xhtml"
+>
+	<ui:define name="title">
+		<ui:insert name="title"/>
+	</ui:define>
+
+	<ui:define name="metadata">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+		<ui:insert name="metadata"/>
+	</ui:define>
+
+	<ui:define name="styles">
+		<h:outputStylesheet name="layout-menu-left.css" library="templates-plain" rendered="#{layoutEnabled != null? layoutEnabled: 'true'}"/>
+		<h:outputStylesheet name="theme.css" library="templates-plain" rendered="#{themeEnabled != null? themeEnabled: 'true'}"/>
+		<ui:insert name="styles"/>
+	</ui:define>
+
+	<ui:define name="main-menu-header">
+		<h2>Menu</h2>
+	</ui:define>
+
+	<ui:define name="main-menu-toggle">
+		&#x2630;
+	</ui:define>
+
+	<ui:define name="locale">
+		<ui:insert name="locale"/>
+	</ui:define>
+
+</ui:composition>
+

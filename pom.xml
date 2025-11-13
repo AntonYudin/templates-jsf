@@ -35,6 +35,7 @@
 		<module>relativeurlhandler</module>
 		<module>userlocale</module>
 		<module>default</module>
+		<module>plain</module>
 		<module>example</module>
 	</modules>
 

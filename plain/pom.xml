@@ -7,16 +7,25 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.antonyudin.templates.jsf</groupId>
-	<artifactId>example</artifactId>
+	<artifactId>plain</artifactId>
 	<version>1.0.0</version>
-	<name>JSF Template Use Example</name>
-	<packaging>war</packaging>
+	<name>JSF Template / Dark</name>
+	<packaging>jar</packaging>
 
 	<parent>
 		<groupId>com.antonyudin.templates.jsf</groupId>
 		<artifactId>project</artifactId>
 		<version>1.0</version>
 	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.war.plugin.version>3.4.0</maven.war.plugin.version>
+		<jupiter.version>5.13.0-M2</jupiter.version>
+		<maven.surefire.version>3.5.3</maven.surefire.version>
+		<maven.compiler.version>3.14.0</maven.compiler.version>
+		<maven.jar.version>3.4.2</maven.jar.version>
+	</properties>
 
 	<dependencies>
 
@@ -27,38 +36,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.glassfish</groupId>
-			<artifactId>jakarta.faces</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
 			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.primefaces</groupId>
-			<artifactId>primefaces</artifactId>
-			<classifier>jakarta</classifier>
-		</dependency>
-
-		<dependency>
-			<groupId>com.antonyudin.templates.jsf</groupId>
-			<artifactId>${template}</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.antonyudin.templates.jsf</groupId>
-			<artifactId>relativeurlhandler</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.antonyudin.templates.jsf</groupId>
-			<artifactId>userlocale</artifactId>
-			<version>1.0.0</version>
 		</dependency>
 
 	</dependencies>
@@ -71,6 +51,7 @@
 			</resource>
 		</resources>
 		<plugins>
+			<!--
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -78,12 +59,6 @@
 
 				<configuration>
 					<webResources>
-						<resource>
-							<filtering>true</filtering>
-							<directory>src/main/webapp/resources/layout</directory>
-							<include>*.xhtml</include>
-							<targetPath>resources/layout</targetPath>
-						</resource>
 						<resource>
 							<filtering>true</filtering>
 							<directory>src/main/webapp</directory>
@@ -99,6 +74,19 @@
 					</webResources>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.version}</version>
+				<configuration>
+
+					<source>21</source>
+					<target>21</target>
+				</configuration>
+			</plugin>
+			-->
+
 		</plugins>
 
 	</build>

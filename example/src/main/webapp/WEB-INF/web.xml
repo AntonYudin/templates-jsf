@@ -11,6 +11,7 @@
 		<servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	<!-- template: ${template} -->
 
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
