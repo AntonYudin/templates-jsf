@@ -145,8 +145,29 @@ public class Handler extends ViewHandlerWrapper implements java.io.Serializable 
 		final var applicationContextPath = context.getExternalContext().getApplicationContextPath();
 		final var requestServletPath = context.getExternalContext().getRequestServletPath();
 		final var requestPathInfo = context.getExternalContext().getRequestPathInfo();
+		final var requestContextPath = context.getExternalContext().getRequestContextPath();
 		final var depth = getDepth(requestPathInfo);
-		final var prefix = applicationContextPath + requestServletPath + "/";
+		logger.fine("depth: [" + depth + "]");
+		logger.fine("applicationContextPath: [" + applicationContextPath + "]");
+		final var applicationContextPathWithSlash = (applicationContextPath != null? applicationContextPath + "/": null);
+
+		if ((applicationContextPathWithSlash != null) && (result.indexOf(applicationContextPathWithSlash) == 0)) {
+			result.delete(0, applicationContextPathWithSlash.length());
+			logger.fine("\tconverted to: [" + result + "]");
+		}
+
+		logger.fine("requestPathInfo: [" + requestPathInfo + "]");
+		logger.fine("requestServletPath: [" + requestServletPath + "]");
+		logger.fine("requestContextPath: [" + requestContextPath + "]");
+
+		final var prefix = (
+			requestServletPath.startsWith("/")?
+			requestServletPath.substring(1):
+			requestServletPath
+		) + "/";
+
+		logger.fine("result: [" + result + "]");
+		logger.fine("prefix: [" + prefix + "]");
 
 		if (result.indexOf(prefix) == 0) {
 
